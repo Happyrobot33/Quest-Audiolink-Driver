@@ -88,8 +88,8 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnableAutogain: 0
-    - _FadeExpFalloff: 0.75
-    - _FadeLength: 0.8
+    - _FadeExpFalloff: 0.958
+    - _FadeLength: 0.25
     - _FreqCeiling: 1
     - _FreqFloor: 0.123
     - _Gain: 1
@@ -111,7 +111,7 @@ Material:
     - _SortNotes: 0
     - _SourceDistance: 30.727812
     - _SourceSpatialBlend: 0
-    - _SourceVolume: 0.9
+    - _SourceVolume: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _ThemeColorMode: 0
@@ -137,14 +137,14 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _CustomThemeColor0: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    - _CustomThemeColor0: {r: 1, g: 1, b: 0, a: 1}
     - _CustomThemeColor1: {r: 0, g: 0, b: 1, a: 1}
     - _CustomThemeColor2: {r: 1, g: 0, b: 0, a: 1}
     - _CustomThemeColor3: {r: 0, g: 1, b: 0, a: 1}
     - _DayTimeProp: {r: 376, g: 779, b: 67, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FrameTimeProp: {r: 590, g: 8, b: 0, a: 0}
-    - _SourcePosition: {r: 37.998, g: 1.256, b: 0, a: 0}
+    - _SourcePosition: {r: 0, g: 0, b: 0, a: 0}
     - _ThemeColor0: {r: 1, g: 1, b: 0, a: 1}
     - _ThemeColor1: {r: 0, g: 0, b: 1, a: 1}
     - _ThemeColor2: {r: 1, g: 0, b: 0, a: 1}

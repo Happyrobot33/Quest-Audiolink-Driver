@@ -13,9 +13,7 @@ public class AudioInput : MonoBehaviour
         int deviceMaxFreq,
             deviceMinFreq;
         Microphone.GetDeviceCaps(deviceName, out deviceMinFreq, out deviceMaxFreq);
-        //int sampleRate = AudioSettings.outputSampleRate / deviceMaxFreq;
-        int sampleRate = AudioSettings.outputSampleRate;
-        audioSource.clip = Microphone.Start(deviceName, true, 10, sampleRate);
+        audioSource.clip = Microphone.Start(deviceName, true, 10, deviceMaxFreq);
         audioSource.loop = true;
         while (!(Microphone.GetPosition(null) > 0)) { }
         audioSource.Play();

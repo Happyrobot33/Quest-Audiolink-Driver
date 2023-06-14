@@ -14,6 +14,9 @@ public class DataInjector : MonoBehaviour
 
     public bool inject = false;
 
+    [Range(0, 15)]
+    public int smoothing = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +34,10 @@ public class DataInjector : MonoBehaviour
         float band4 = 0;
         if (inject)
         {
-            band1 = getBand(0);
-            band2 = getBand(1);
-            band3 = getBand(2);
-            band4 = getBand(3);
+            band1 = getBand(0, smoothing);
+            band2 = getBand(1, smoothing);
+            band3 = getBand(2, smoothing);
+            band4 = getBand(3, smoothing);
         }
         else
         {
@@ -61,10 +64,31 @@ public class DataInjector : MonoBehaviour
         oscTransmitter.Send(message);
     }
 
-    float getBand(int band)
+    //smoothed bands start at index 3584
+    //3584 is the smoothest and 3599 is the most recent
+    //each band is offset by the 128
+    float getBand(int band, int smoothing = 0)
     {
-        int dataIndex = (band * 128);
-        float bandValue = audioLink.audioData[dataIndex].r;
+        //invert smoothing so it makes sense
+        smoothing = 15 - smoothing;
+        //cap smoothing
+        if (smoothing < 0)
+            smoothing = 0;
+        if (smoothing > 15)
+            smoothing = 15;
+        int dataIndex = 3584 + (band * 128) + smoothing;
+        float bandValue = audioLink.audioData[dataIndex].grayscale;
         return bandValue;
+    }
+
+    //public so it can be called from the UI
+    public void Inject(bool value)
+    {
+        inject = value;
+    }
+
+    public void setSmoothing(float value)
+    {
+        smoothing = (int)value;
     }
 }

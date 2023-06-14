@@ -221,6 +221,21 @@ namespace VRCAudioLink
         // ReSharper restore InconsistentNaming
 
 
+        public void setGain(float value)
+        {
+            gain = Mathf.Clamp(value, 0f, 2f);
+        }
+
+        public void setBass(float value)
+        {
+            bass = Mathf.Clamp(value, 0f, 2f);
+        }
+
+        public void setTreble(float value)
+        {
+            treble = Mathf.Clamp(value, 0f, 2f);
+        }
+
         private void InitIDs()
         {
             _AudioTexture = PropertyToID("_AudioTexture");

@@ -9,13 +9,20 @@ public class AudioInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int deviceMaxFreq,
-            deviceMinFreq;
-        Microphone.GetDeviceCaps(deviceName, out deviceMinFreq, out deviceMaxFreq);
-        audioSource.clip = Microphone.Start(deviceName, true, 10, deviceMaxFreq);
-        audioSource.loop = true;
-        while (!(Microphone.GetPosition(null) > 0)) { }
-        audioSource.Play();
+        try
+        {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            int deviceMaxFreq,
+                deviceMinFreq;
+            Microphone.GetDeviceCaps(deviceName, out deviceMinFreq, out deviceMaxFreq);
+            audioSource.clip = Microphone.Start(deviceName, true, 10, deviceMaxFreq);
+            audioSource.loop = true;
+            //while (!(Microphone.GetPosition(null) > 0)) { }
+            audioSource.Play();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError(e);
+        }
     }
 }

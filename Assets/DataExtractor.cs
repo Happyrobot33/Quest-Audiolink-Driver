@@ -23,6 +23,7 @@ public class DataExtractor : MonoBehaviour
     public float _BAND2 = 0;
     public float _BAND3 = 0;
     public float _BAND4 = 0;
+    public bool runExtractor = true;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,10 @@ public class DataExtractor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!runExtractor)
+        {
+            return;
+        }
         DetectTags();
 
         if (detector.DetectedTags.Count() != 2)
@@ -125,7 +130,7 @@ public class DataExtractor : MonoBehaviour
         Color pixelColor = InputImage.GetPixel(pixel, height / 2);
 
         //return the red value of the pixel as 0 to 1
-        return pixelColor.r;
+        return pixelColor.grayscale;
     }
 
     private void DetectTags()
@@ -161,5 +166,10 @@ public class DataExtractor : MonoBehaviour
     {
         Vector3 camPos = projectionCamera.WorldToScreenPoint(position);
         return camPos;
+    }
+
+    public void inverseEnable(bool value)
+    {
+        runExtractor = !value;
     }
 }

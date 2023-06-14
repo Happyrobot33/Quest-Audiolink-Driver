@@ -78,7 +78,7 @@ Material:
     - _AutogainDerate: 0.1
     - _Bands: 4
     - _BaseAmplitude: 250
-    - _Bass: 2
+    - _Bass: 1
     - _BottomFrequency: 13.75
     - _BumpScale: 1
     - _ContrastOffset: 0.62
@@ -122,7 +122,7 @@ Material:
     - _Threshold1: 0.45
     - _Threshold2: 0.45
     - _Threshold3: 0.45
-    - _Treble: 2
+    - _Treble: 1
     - _TrebleCorrection: 5
     - _UVSec: 0
     - _UniAmp: 12

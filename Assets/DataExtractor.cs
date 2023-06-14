@@ -135,21 +135,21 @@ public class DataExtractor : MonoBehaviour
 
     private void DetectTags()
     {
+        //begin profiling
+        Profiler.BeginSample("Tag Detection");
         //only run on a interval
         if (Time.frameCount % detectRate != 0)
         {
+            RenderTexture.active = windowRenderTexture;
+            rawImage.ReadPixels(
+                new Rect(0, 0, windowRenderTexture.width, windowRenderTexture.height),
+                0,
+                0
+            );
+            RenderTexture.active = null;
+            rawImage.Apply();
             return;
         }
-        //begin profiling
-        Profiler.BeginSample("Tag Detection");
-        RenderTexture.active = windowRenderTexture;
-        rawImage.ReadPixels(
-            new Rect(0, 0, windowRenderTexture.width, windowRenderTexture.height),
-            0,
-            0
-        );
-        RenderTexture.active = null;
-        rawImage.Apply();
 
         detector.ProcessImage(
             rawImage.GetPixels32(),

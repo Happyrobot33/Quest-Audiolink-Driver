@@ -14,6 +14,9 @@ namespace VRCAudioLink
 
         public class AudioLinkController : UdonSharpBehaviour
         {
+    #else
+        public class AudioLinkController : MonoBehaviour
+        {
             [Space(10)]
 
             public AudioLink audioLink;
@@ -89,7 +92,7 @@ namespace VRCAudioLink
             #if UNITY_EDITOR
             void Update()
             {
-                //UpdateSettings();
+                UpdateSettings();
             }
             #endif
 
@@ -256,9 +259,5 @@ namespace VRCAudioLink
                 return ( (t-a) / (b-a) ) * (v-u) + u;
             }
         }
-    #else
-        public class AudioLinkController2 : MonoBehaviour
-        {
-        }
-    #endif
+        #endif
 }

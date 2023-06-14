@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.happyrobot33.fpscontroller": {
+      "version": "file:com.happyrobot33.fpscontroller",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.hecomi.uwindowcapture": {
       "version": "https://github.com/hecomi/uWindowCapture.git#upm",
       "depth": 0,

@@ -37,7 +37,7 @@ public class OSCReadback : MonoBehaviour
                 //writeback the current seting
                 //we do this since its easier to round here correctly than in the avatar
                 var messageSend = new OSCMessage("/avatar/parameters/QAL/CONTROLLER/SETTING");
-                messageSend.AddValue(OSCValue.Float(setting / (float)numSettings));
+                messageSend.AddValue(OSCValue.Int(setting));
                 OSCTransmitter.Send(messageSend);
                 //initialize the avatars slider to the current value
                 messageSend = new OSCMessage("/avatar/parameters/QAL/CONTROLLER/VALUE_Current");

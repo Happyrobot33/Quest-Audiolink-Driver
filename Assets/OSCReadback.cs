@@ -14,13 +14,22 @@ public class OSCReadback : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        OSCReceiver.Bind("/avatar/parameters/QAL/*", receiveMessage);
+        OSCReceiver.Bind("/avatar/parameters/QAL/CONTROLLER/*", receiveMessage);
+        OSCReceiver.Bind("/avatar/change", avatarChange);
+    }
+
+    bool avatarInitialized = false;
+
+    void avatarChange(OSCMessage message)
+    {
+        avatarInitialized = false;
+        Debug.Log("Avatar is not initialized");
     }
 
     /// <summary> This is the current setting that the value slider will change </summary>
     int setting = 0;
     const int numSettings = 6;
-    bool notMovingSettingSlider = true;
+    bool MovingSettingSlider = true;
 
     void receiveMessage(OSCMessage message)
     {
@@ -29,8 +38,16 @@ public class OSCReadback : MonoBehaviour
         //we use 1 slider to select a setting, and then another slider to select a value for that setting
         switch (message.Address)
         {
+            //this ensures that the avatar is initialized before we start using anything from it
+            case "/avatar/parameters/QAL/CONTROLLER/INITIALIZED":
+                if (message.Values[0].BoolValue)
+                {
+                    avatarInitialized = true;
+                    Debug.Log("Avatar is initialized");
+                }
+                break;
             case "/avatar/parameters/QAL/CONTROLLER/SETTING_IsGrabbed":
-                notMovingSettingSlider = !message.Values[0].BoolValue;
+                MovingSettingSlider = message.Values[0].BoolValue;
                 break;
             case "/avatar/parameters/QAL/CONTROLLER/SETTING_Squish":
                 setting = (int)remap(message.Values[0].FloatValue, 1, 0, 0, numSettings);
@@ -53,7 +70,7 @@ public class OSCReadback : MonoBehaviour
                 messageSend = new OSCMessage("/avatar/parameters/QAL/CONTROLLER/VALUE_Control");
                 messageSend.AddValue(OSCValue.Bool(false));
                 OSCTransmitter.Send(messageSend);
-                if (notMovingSettingSlider)
+                if (!MovingSettingSlider && avatarInitialized)
                 {
                     switch (setting)
                     {

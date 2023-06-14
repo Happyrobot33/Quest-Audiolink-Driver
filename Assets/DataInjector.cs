@@ -6,8 +6,6 @@ using extOSC;
 
 public class DataInjector : MonoBehaviour
 {
-    public string remoteHost = "127.0.0.1";
-    public int remotePort = 9000;
     public DataExtractor dataExtractor;
     public AudioLink audioLink;
     public OSCTransmitter oscTransmitter;

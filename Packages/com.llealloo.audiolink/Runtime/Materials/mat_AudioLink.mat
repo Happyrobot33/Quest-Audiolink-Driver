@@ -120,8 +120,8 @@ Material:
     - _ThemeColorsEnable: 0
     - _Threshold0: 0.45
     - _Threshold1: 0.45
-    - _Threshold2: 0.45
-    - _Threshold3: 0.45
+    - _Threshold2: 0.46000004
+    - _Threshold3: 1
     - _Treble: 1
     - _TrebleCorrection: 5
     - _UVSec: 0

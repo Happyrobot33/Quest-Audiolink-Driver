@@ -10,7 +10,7 @@ public class DataInjector : MonoBehaviour
     public int remotePort = 9000;
     public DataExtractor dataExtractor;
     public AudioLink audioLink;
-    OSCTransmitter oscTransmitter;
+    public OSCTransmitter oscTransmitter;
 
     public bool inject = false;
 
@@ -18,12 +18,7 @@ public class DataInjector : MonoBehaviour
     public int smoothing = 0;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        oscTransmitter = gameObject.AddComponent<OSCTransmitter>();
-        oscTransmitter.RemoteHost = remoteHost;
-        oscTransmitter.RemotePort = remotePort;
-    }
+    void Start() { }
 
     // Update is called once per frame
     void Update()

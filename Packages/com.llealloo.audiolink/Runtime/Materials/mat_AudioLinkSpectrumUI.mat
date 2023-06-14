@@ -93,8 +93,8 @@ Material:
     - _SrcBlend: 1
     - _Threshold0: 0.45
     - _Threshold1: 0.45
-    - _Threshold2: 0.45
-    - _Threshold3: 0.45
+    - _Threshold2: 0.46000004
+    - _Threshold3: 1
     - _ThresholdDottedLine: 0.012
     - _ThresholdThickness: 0.01
     - _UVSec: 0

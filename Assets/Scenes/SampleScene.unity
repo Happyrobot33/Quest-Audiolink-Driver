@@ -277,6 +277,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143331450}
   m_CullTransparentMesh: 1
+--- !u!1 &146600334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 146600335}
+  - component: {fileID: 146600337}
+  - component: {fileID: 146600336}
+  m_Layer: 0
+  m_Name: OSC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &146600335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146600334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2083404332}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &146600336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146600334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464088183d2a1484ab8fb64e356c9f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _autoConnect: 1
+  _closeOnPause: 0
+  _mapBundle: {fileID: 0}
+  _workInEditor: 0
+  _localHostMode: 0
+  _localPortMode: 2
+  _localReceiver: {fileID: 0}
+  _localHost: 10.0.2.246
+  _localPort: 7000
+  _remoteHost: 127.0.0.1
+  _remotePort: 9000
+  _useBundle: 0
+--- !u!114 &146600337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146600334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbba286dc10e549b2bdec947ef8dbd3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _autoConnect: 1
+  _closeOnPause: 0
+  _mapBundle: {fileID: 0}
+  _workInEditor: 0
+  _localHostMode: 0
+  _localHost: 10.0.2.246
+  _localPort: 9001
 --- !u!1 &147512559
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +846,7 @@ MonoBehaviour:
   remotePort: 9000
   dataExtractor: {fileID: 1196229145}
   audioLink: {fileID: 2439678699266885654}
+  oscTransmitter: {fileID: 146600336}
   inject: 0
   smoothing: 0
 --- !u!1 &424617416
@@ -997,7 +1074,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 130.75876}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &514124468
 MonoBehaviour:
@@ -1998,7 +2075,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 232.46}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1050810398
 MonoBehaviour:
@@ -2449,7 +2526,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 130.75876}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1419741900
 MonoBehaviour:
@@ -2547,10 +2624,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6a6225c91f7294e9e869c519b8e358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverHost: 127.0.0.1
-  serverPort: 9001
   audioLink: {fileID: 2439678699266885654}
   audioLinkController: {fileID: 3415916215943520705}
+  OSCReceiver: {fileID: 146600337}
+  OSCTransmitter: {fileID: 146600336}
 --- !u!1 &1637064914
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,6 +3311,7 @@ Transform:
   - {fileID: 1196229144}
   - {fileID: 357670689}
   - {fileID: 1584562976}
+  - {fileID: 146600335}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

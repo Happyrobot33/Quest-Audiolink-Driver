@@ -5547,18 +5547,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1391487487698608477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4507280386636134819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &1408785099283854806
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6733,18 +6721,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3001605080083094286}
   m_CullTransparentMesh: 0
---- !u!114 &2730611552652894643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6433480675485850743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2731118328014908911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7373,7 +7349,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2730611552652894643}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
         m_MethodName: SendCustomEvent
         m_Mode: 5
@@ -10181,7 +10157,6 @@ GameObject:
   - component: {fileID: 8990260865268318919}
   - component: {fileID: 6751350970634786667}
   - component: {fileID: 1082027793713025081}
-  - component: {fileID: 1391487487698608477}
   m_Layer: 13
   m_Name: HSV Extension Canvas
   m_TagString: Untagged
@@ -10618,18 +10593,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4864247061268398178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6433480675485850743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4882090254654455362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11333,18 +11296,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5523417071906692883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7841830611961867509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!222 &5553776643279952937
@@ -12345,8 +12296,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8012309638131999857}
   - component: {fileID: 3175274815220760695}
-  - component: {fileID: 4864247061268398178}
-  - component: {fileID: 2730611552652894643}
   m_Layer: 13
   m_Name: Slider_Gain
   m_TagString: Untagged
@@ -12646,7 +12595,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!1 &6780526406776560805
 GameObject:
   m_ObjectHideFlags: 0
@@ -13732,7 +13681,6 @@ GameObject:
   - component: {fileID: 1541158531668974262}
   - component: {fileID: 8741760314844072875}
   - component: {fileID: 2436042195511374066}
-  - component: {fileID: 5523417071906692883}
   m_Layer: 13
   m_Name: Canvas
   m_TagString: Untagged

@@ -89,18 +89,9 @@ namespace VRCAudioLink
 
             #endregion
 
-            #if UNITY_EDITOR
             void Update()
             {
                 UpdateSettings();
-            }
-            #endif
-
-            ThemeColorController FindThemeColorController()
-            {
-                Transform controllerTransform = transform.Find("ThemeColorController");
-                if (controllerTransform == null) return null;
-                return controllerTransform.GetComponent<ThemeColorController>();
             }
 
             void Start()
@@ -110,26 +101,6 @@ namespace VRCAudioLink
                 {
                     Debug.LogError("Controller not connected to AudioLink");
                     return;
-                }
-
-                if (themeColorController == null)
-                {
-                    // This is here in case someone upgraded AudioLink, which updates
-                    // everything in the prefab, but not the outermost properties of the prefab.
-                    // TODO: Double check that this is how upgrading ends up working.
-                    Debug.Log("AudioLinkController using fallback method for finding themeColorController");
-                    themeColorController = FindThemeColorController();
-                }
-                if (themeColorController == null)
-                {
-                    // Something really weird has gone on. maybe using updated script
-                    // on un-updated prefab?
-                    Debug.LogError("AudioLinkController could not find themeColorController");
-                }
-                else
-                {
-                    themeColorController.audioLink = audioLink;
-                    themeColorController.UpdateAudioLinkThemeColors();
                 }
 
                 GetSettings();
@@ -247,10 +218,6 @@ namespace VRCAudioLink
                 threshold1Slider.value = _initThreshold1;
                 threshold2Slider.value = _initThreshold2;
                 threshold3Slider.value = _initThreshold3;
-                if (themeColorController != null)
-                {
-                    themeColorController.ResetThemeColors();
-                }
             }
 
 

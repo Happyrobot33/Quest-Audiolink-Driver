@@ -224,16 +224,19 @@ namespace VRCAudioLink
         public void setGain(float value)
         {
             gain = Mathf.Clamp(value, 0f, 2f);
+            UpdateSettings();
         }
 
         public void setBass(float value)
         {
             bass = Mathf.Clamp(value, 0f, 2f);
+            UpdateSettings();
         }
 
         public void setTreble(float value)
         {
             treble = Mathf.Clamp(value, 0f, 2f);
+            UpdateSettings();
         }
 
         private void InitIDs()

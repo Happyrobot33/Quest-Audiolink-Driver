@@ -78,7 +78,7 @@ Material:
     - _AutogainDerate: 0.1
     - _Bands: 4
     - _BaseAmplitude: 250
-    - _Bass: 1
+    - _Bass: 1.5138874
     - _BottomFrequency: 13.75
     - _BumpScale: 1
     - _ContrastOffset: 0.62
@@ -94,7 +94,7 @@ Material:
     - _FadeLength: 0.25
     - _FreqCeiling: 1
     - _FreqFloor: 0.123
-    - _Gain: 1
+    - _Gain: 1.3997016
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -118,11 +118,11 @@ Material:
     - _SrcBlend: 1
     - _ThemeColorMode: 0
     - _ThemeColorsEnable: 0
-    - _Threshold0: 0.45
+    - _Threshold0: 0.75694907
     - _Threshold1: 0.45
-    - _Threshold2: 0.46000004
+    - _Threshold2: 0.44999987
     - _Threshold3: 1
-    - _Treble: 1
+    - _Treble: 0.99999964
     - _TrebleCorrection: 5
     - _UVSec: 0
     - _UniAmp: 12

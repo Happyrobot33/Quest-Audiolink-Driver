@@ -23,11 +23,14 @@ public class OSCReadback : MonoBehaviour
 
     void receiveMessage(OSCMessage message)
     {
-        Debug.Log(message.Address);
+        //Debug.Log(message.Address);
+        ///All float values will come in as 0 to 1, with 0 being the max value and 1 being the min value due to the way inputs on the avatar work
         switch (message.Address)
         {
-            case "/avatar/parameters/QAL/CONTROLLER/GAIN":
-                audioLink.gain = message.Values[0].FloatValue;
+            case "/avatar/parameters/QAL/CONTROLLER/GAIN_Squish":
+                audioLink.gain = 2 - (message.Values[0].FloatValue * 2);
+                Debug.Log(2 - (message.Values[0].FloatValue * 2));
+                Debug.Log(audioLink.gain);
                 break;
             case "/avatar/parameters/QAL/CONTROLLER/TREBLE":
                 audioLink.treble = message.Values[0].FloatValue;
@@ -54,5 +57,6 @@ public class OSCReadback : MonoBehaviour
         }
         //update audioLink
         audioLink.UpdateSettings();
+        audioLinkController.GetSettings();
     }
 }

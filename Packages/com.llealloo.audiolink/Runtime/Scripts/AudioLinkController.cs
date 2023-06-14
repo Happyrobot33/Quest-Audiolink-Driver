@@ -155,7 +155,7 @@ namespace VRCAudioLink
                 UpdateSettings();
             }
 
-            private void GetSettings()
+            public void GetSettings()
             {
                 // General settings
                 gainSlider.value = audioLink.gain;

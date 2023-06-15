@@ -16,9 +16,9 @@ jobs:
           - 2020.2.1f1
         targetPlatform:
           - StandaloneLinux64 # Build a Linux 64-bit standalone.
-          - iOS # Build an iOS player.
-          - Android # Build an Android player.
-          - WebGL # WebGL.
+          #- iOS # Build an iOS player.
+          #- Android # Build an Android player.
+          #- WebGL # WebGL.
     steps:
       - uses: actions/checkout@v2
         with:
@@ -76,8 +76,8 @@ jobs:
         targetPlatform:
           - StandaloneWindows # Build a Windows 32-bit standalone.
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - tvOS # Build an AppleTV player.
-          - WSAPlayer # Build a UWP App.
+          #- tvOS # Build an AppleTV player.
+          #- WSAPlayer # Build a UWP App.
 
     steps:
       - uses: actions/checkout@v2

@@ -69,13 +69,14 @@ public class DataExtractor : MonoBehaviour
 
         Vector3 LeftTagPosition = GetRawTagPosition(detector.DetectedTags.ElementAt(0).Position);
         Vector3 RightTagPosition = GetRawTagPosition(detector.DetectedTags.ElementAt(1).Position);
+        int offset = 20;
 
         //create bounds between the tags
         Rect bounds = new Rect(
             LeftTagPosition.x,
-            LeftTagPosition.y,
+            LeftTagPosition.y - (offset / 2),
             RightTagPosition.x - LeftTagPosition.x,
-            20
+            offset
         );
 
         //change the bounds to start top right instead of bottom left

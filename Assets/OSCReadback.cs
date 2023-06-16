@@ -29,7 +29,7 @@ public class OSCReadback : MonoBehaviour
     /// <summary> This is the current setting that the value slider will change </summary>
     int setting = 0;
     const int numSettings = 6;
-    bool MovingSettingSlider = true;
+    bool MovingSettingSlider = false;
 
     void receiveMessage(OSCMessage message)
     {
@@ -56,14 +56,17 @@ public class OSCReadback : MonoBehaviour
                 var messageSend = new OSCMessage("/avatar/parameters/QAL/CONTROLLER/SETTING");
                 messageSend.AddValue(OSCValue.Int(setting));
                 OSCTransmitter.Send(messageSend);
-                //initialize the avatars slider to the current value
-                messageSend = new OSCMessage("/avatar/parameters/QAL/CONTROLLER/VALUE_Current");
-                messageSend.AddValue(OSCValue.Float(getSettingValue(setting)));
-                OSCTransmitter.Send(messageSend);
-                //tell the avatar to update the slider
-                messageSend = new OSCMessage("/avatar/parameters/QAL/CONTROLLER/VALUE_Control");
-                messageSend.AddValue(OSCValue.Bool(true));
-                OSCTransmitter.Send(messageSend);
+                if (MovingSettingSlider)
+                {
+                    //initialize the avatars slider to the current value
+                    messageSend = new OSCMessage("/avatar/parameters/QAL/CONTROLLER/VALUE_Current");
+                    messageSend.AddValue(OSCValue.Float(getSettingValue(setting)));
+                    OSCTransmitter.Send(messageSend);
+                    //tell the avatar to update the slider
+                    messageSend = new OSCMessage("/avatar/parameters/QAL/CONTROLLER/VALUE_Control");
+                    messageSend.AddValue(OSCValue.Bool(true));
+                    OSCTransmitter.Send(messageSend);
+                }
                 break;
             case "/avatar/parameters/QAL/CONTROLLER/VALUE_Squish":
                 //release control

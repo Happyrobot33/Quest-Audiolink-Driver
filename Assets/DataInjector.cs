@@ -59,7 +59,7 @@ public class DataInjector : MonoBehaviour
 
     //smoothed bands start at index 3584
     //3584 is the smoothest and 3599 is the most recent
-    //each band is offset by the 128
+    //each band is offset by 128
     float getBand(int band, int smoothing = 0)
     {
         //invert smoothing so it makes sense

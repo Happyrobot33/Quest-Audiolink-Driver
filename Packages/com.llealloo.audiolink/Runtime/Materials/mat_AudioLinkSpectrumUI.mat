@@ -91,7 +91,7 @@ Material:
     - _SpectrumVisMode: 3
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Threshold0: 0
+    - _Threshold0: 0.45
     - _Threshold1: 0.45
     - _Threshold2: 0.45
     - _Threshold3: 0.45

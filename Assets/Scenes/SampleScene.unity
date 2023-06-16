@@ -1228,10 +1228,10 @@ RectTransform:
   m_Father: {fileID: 1637064915}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 130.75876}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -261.51752}
+  m_SizeDelta: {x: 232.46, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &514124468
 MonoBehaviour:
@@ -2148,10 +2148,10 @@ RectTransform:
   m_Father: {fileID: 1637064915}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 232.46}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -493.97754}
+  m_SizeDelta: {x: 232.46, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1050810398
 MonoBehaviour:
@@ -2633,18 +2633,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 121649528618137789, guid: 9fec899fda7902a4b92f253e61db4e7e,
         type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 121649528618137789, guid: 9fec899fda7902a4b92f253e61db4e7e,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1782406702}
+      objectReference: {fileID: 1782406701}
     - target: {fileID: 121649528618137789, guid: 9fec899fda7902a4b92f253e61db4e7e,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_volume
+      value: changeAudioVolume
       objectReference: {fileID: 0}
     - target: {fileID: 121649528618137789, guid: 9fec899fda7902a4b92f253e61db4e7e,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: AudioInput, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 121649528618137795, guid: 9fec899fda7902a4b92f253e61db4e7e,
         type: 3}
@@ -3270,10 +3275,10 @@ RectTransform:
   m_Father: {fileID: 1637064915}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 130.75876}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -130.75876}
+  m_SizeDelta: {x: 232.46, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1419741900
 MonoBehaviour:
@@ -3868,7 +3873,8 @@ AudioSource:
   m_GameObject: {fileID: 1782406699}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6582174281052801837, guid: 96ec86db3a7f7c24f845a076f0d5d14e,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

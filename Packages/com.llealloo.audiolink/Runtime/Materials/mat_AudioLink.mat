@@ -94,7 +94,7 @@ Material:
     - _FadeLength: 0.25
     - _FreqCeiling: 1
     - _FreqFloor: 0.123
-    - _Gain: 2
+    - _Gain: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -113,12 +113,12 @@ Material:
     - _SortNotes: 0
     - _SourceDistance: 30.727812
     - _SourceSpatialBlend: 0
-    - _SourceVolume: 0.33666667
+    - _SourceVolume: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _ThemeColorMode: 0
     - _ThemeColorsEnable: 0
-    - _Threshold0: 0
+    - _Threshold0: 0.45
     - _Threshold1: 0.45
     - _Threshold2: 0.45
     - _Threshold3: 0.45

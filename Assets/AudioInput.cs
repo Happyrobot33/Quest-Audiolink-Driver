@@ -48,4 +48,11 @@ public class AudioInput : MonoBehaviour
         deviceName = Microphone.devices[deviceIndex];
         initMic();
     }
+
+    public void changeAudioVolume(float volume)
+    {
+        //remap 0 to 1 to -80 to 0
+        volume = (volume * 80) - 80;
+        audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Audio Input Loopback", volume);
+    }
 }

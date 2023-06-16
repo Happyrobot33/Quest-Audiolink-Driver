@@ -46,6 +46,13 @@ public class AudioInput : MonoBehaviour
 
     public void changeMicInput(int deviceIndex)
     {
+        //end all recording
+        foreach (var device in Microphone.devices)
+        {
+            Microphone.End(device);
+        }
+        //disable audio source
+        StartCoroutine(enableAudioSource());
         deviceName = Microphone.devices[deviceIndex];
         initMic();
     }
@@ -55,5 +62,13 @@ public class AudioInput : MonoBehaviour
         //remap 0 to 1 to -80 to 0
         volume = (volume * 80) - 80;
         audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Audio Input Loopback", volume);
+    }
+
+    // coroutine to enable and disable audio source
+    IEnumerator enableAudioSource()
+    {
+        audioSource.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        audioSource.enabled = true;
     }
 }
